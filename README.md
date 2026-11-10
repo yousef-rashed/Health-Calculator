@@ -16,7 +16,7 @@ A practical Python Command-Line Interface (CLI) application that helps users mon
    ```
 3. Navigate to the project folder and run the script:
    ```bash
-   health_care.py
+   python health_care.py
    ```
 
 ## 🛠️ Built With
