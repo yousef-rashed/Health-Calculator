@@ -10,7 +10,7 @@ while True:
         age = float(input("Please enter your age: "))
         break
     except(ValueError):
-        print("please enter a numbers only")
+        print("please enter numbers only")
         continue
 while True:
     sex = input("Please enter your sex: ").lower()
@@ -29,42 +29,42 @@ while True:
     else:
         print("please enter a number from 1, 2 or 3")
 
+# BMI
+def BMI():
+    height_by_meter = height / 100
+    height_squared = height_by_meter ** 2
+    result_of_BMI = weight / height_squared
+    return(result_of_BMI)
+
+# Calorie counting
+def calorie_counting():
+    first = weight * 10
+    second = height * 6.25
+    third = age * 5
+    total = first + second - third
+    if sex == "male" or sex == "m":
+        total = total + 5
+    else:
+        total = total - 161
+    result_of_calorie_counting = total
+    return(result_of_calorie_counting)
+
+# Adding motion effort
+def adding_motion_effort():   
+    if doing_sports == "1":
+        final_calories = calorie_counting() * 1.725
+    elif doing_sports == "2":
+        final_calories = calorie_counting() * 1.55
+    else:
+        final_calories = calorie_counting() * 1.2
+    result_of_adding_motion_effort = final_calories
+    return(result_of_adding_motion_effort)
+
 def main():
-    # BMI
-    def BMI():
-        height_by_meter = height / 100
-        height_squared = height_by_meter ** 2
-        result_of_BMI = weight / height_squared
-        return(result_of_BMI)
-
-    # Calorie counting
-    def calorie_counting():
-        frist = weight * 10
-        scound = height * 6.25
-        thried = age * 5
-        total = frist + scound - thried
-        if sex == "male" or sex == "m":
-            total = total + 5
-        else:
-            total = total - 161
-        result_of_calorie_counting = total
-        return(result_of_calorie_counting)
-
-    # Adding motion effort
-    def adding_motion_effort():   
-        if doing_sports == "1":
-            final_caories = calorie_counting() * 1.725
-        elif doing_sports == "2":
-            final_caories = calorie_counting() * 1.55
-        else:
-            final_caories = calorie_counting() * 1.2
-        result_of_adding_motion_effort = final_caories
-        return(result_of_adding_motion_effort)
-    
     bmi = BMI()
     Adding_motion_effort = adding_motion_effort()
 
-    print(f"your BMI is {round(bmi, 2)}")
+    print(f"Your BMI is {round(bmi, 2)}")
     if  bmi < 18.5:
         print("You are underweight and need to gain weight.")
     elif 18.5 <= bmi <= 24.9:
@@ -73,5 +73,5 @@ def main():
         print("You have some excess weight and need to lose a little.")
     else:
         print("You are morbidly obese; you need to lose weight seriously.")
-    print(f"You need {Adding_motion_effort} calorie per day.")
+    print(f"You need {round(Adding_motion_effort, 2)} calories per day.")
 main()
