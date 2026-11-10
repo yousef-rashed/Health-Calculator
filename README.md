@@ -12,7 +12,7 @@ A practical Python Command-Line Interface (CLI) application that helps users mon
 1. Make sure you have **Python 3** installed on your computer.
 2. Clone this repository or download the Python file:
    ```bash
-   git clone https://github.com/yousef-rashed/Health-Calculator
+   https://github.com/yousef-rashed/Health-Calculator
    ```
 3. Navigate to the project folder and run the script:
    ```bash
